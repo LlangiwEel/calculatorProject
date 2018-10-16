@@ -1,32 +1,64 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+ .calculatorContainer {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   height: 300px;
+   width: 400px;
+   padding: 5px;
+   border-radius: 5px;
+   margin: 100px auto;
+   background-image: linear-gradient(180deg, blue, teal)
+ }
+
+ .calculatorButton:hover{
+   background-image: linear-gradient(180deg, red, white)
+ }
+
+.left-panel {
+  width: 60%;
+  display:flex;
+  flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.left-panel button {
+  width: 25%;
+  height: 30px;
+  background-color: white;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.right-panel {
+  width:40%;
+  display:flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.right-panel button {
+  width: 90%;
+  height: 30px;
+  background-color: white;
+  border-radius: 5px;
+  margin: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#clearButton {
+  width: 58%;
+}
+
+#output-window {
+  text-align: right;
+  font-weight: bold;
+  font-size: 30px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: white;
+  width: 397px;
+  margin: 2px;
 }
