@@ -30,17 +30,30 @@ this.inputClear = this.inputClear.bind(this);
       case 'x':
       case 'I':
         this.setState({
-          evalString: 'Invalid equation.'
+          evalString: 'Invalid equation'
         })
         break;
-      default:
-      console.log(str);
-      this.setState({
-        evalString: eval(str.replace('x','*'))
-      })
-    }
 
-  }
+      default:
+        switch((str[str.length-1])){
+          case '+':
+          case '-':
+          case '/':
+          case 'x':
+          case 'n':
+          this.setState({
+            evalString: 'Invalid equation'
+          })
+          break;
+
+          default:
+          console.log(str[str.length-1]);
+          this.setState({
+            evalString: eval(str.replace('x','*'))
+          })
+        }
+      }
+    }
 
   inputClear() {
     this.setState({
