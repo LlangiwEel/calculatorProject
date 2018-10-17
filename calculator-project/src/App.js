@@ -15,10 +15,15 @@ this.inputClear = this.inputClear.bind(this);
   }
 
   inputNum(event) {
-    this.setState({
-      evalString: this.state.evalString + event.target.value
-    })
-    console.log("one");
+    if (this.state.evalString === "Invalid equation") {
+      this.setState({
+        evalString: event.target.value
+      })
+    } else {    this.setState({
+          evalString: this.state.evalString + event.target.value
+        })
+      }
+
   }
 
   inputEquals() {
