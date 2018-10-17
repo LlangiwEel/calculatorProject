@@ -14,18 +14,21 @@ this.inputEquals = this.inputEquals.bind(this);
 this.inputClear = this.inputClear.bind(this);
   }
 
+//Button click adds number or operator to evalString
   inputNum(event) {
     if (this.state.evalString === "Invalid equation") {
       this.setState({
         evalString: event.target.value
       })
-    } else {    this.setState({
+    } else {
+      this.setState({
           evalString: this.state.evalString + event.target.value
         })
       }
 
   }
 
+//Checks for invalid equation and evals evalString
   inputEquals() {
     let str = this.state.evalString;
     switch(str[0]){
@@ -60,6 +63,7 @@ this.inputClear = this.inputClear.bind(this);
       }
     }
 
+//Clears evalString
   inputClear() {
     this.setState({
       evalString: ''
